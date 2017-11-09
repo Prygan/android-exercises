@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class LibraryActivity extends AppCompatActivity {
+    static final int REQUEST_CODE = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,8 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Replace with startActivityForResult() to start BookActivity
-                Toast.makeText(LibraryActivity.this, R.string.toast_todo, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LibraryActivity.this, BookActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
     }
@@ -33,6 +36,7 @@ public class LibraryActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO get back book name
+        Toast.makeText(LibraryActivity.this, data.getStringExtra("BOOK_NAME"), Toast.LENGTH_SHORT).show();
     }
 
     @Override
