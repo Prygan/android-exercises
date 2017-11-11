@@ -2,6 +2,16 @@ package fr.android.androidexercises;
 
 // TODO remove comments when using Robolectric
 
+import android.os.Build;
+
+import org.junit.runners.model.InitializationError;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+import org.robolectric.manifest.AndroidManifest;
+
+import java.io.File;
+import java.util.Properties;
+
 //public class CustomRobolectricTestRunner extends RobolectricTestRunner {
 //
 //    public static final String PATH_ASSET = "../../../assets/" + BuildConfig.FLAVOR + "/" + BuildConfig.BUILD_TYPE;
